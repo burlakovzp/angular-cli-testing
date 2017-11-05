@@ -1,0 +1,149 @@
+@gold: #AB987A;
+@blue: rgb(49, 172, 221);
+
+.margin-2vw {
+    margin: 2vw 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+.clearfix:after {
+    content:'';
+    display: block;
+    clear: both;
+}
+
+header {
+    height: 70px;
+    width: 100%;
+    background: @gold;
+}
+
+.container {
+    margin: 0 10%;
+}
+
+.header__link {
+    line-height: 70px;
+    vertical-align: middle;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.main__title {
+    display: inline;
+    padding-bottom: 1vw;
+    border-bottom: 3px solid @gold;
+    float: left;
+}
+
+.tag__selector {
+    display: inline;
+}
+
+.tag__selector select {
+    float: right;
+    width: 20%;
+    border: 1px solid @gold;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.wrapper {
+    margin-top: 3vw;
+}
+
+.post {
+    margin: 3vw 0;
+    border: 1px solid #c9c7c7;
+    padding: 1.5vw 2vw 3vw;
+    border-radius: 5px;
+}
+
+.post__title {
+    .margin-2vw;
+    color: @blue;
+    cursor: pointer;
+}
+
+.post__info {
+    .margin-2vw;
+}
+
+.post__tags span {
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.post_author {
+    margin-top: 3vw;
+    color: @blue;
+    cursor: pointer;
+}
+
+.screen {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.2); 
+    transition: all 1s ease-out 0.5s;
+}
+
+.modal {
+    width: 30vw;
+    height: 30vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    transition: all 1s ease-out 0.5s;
+}
+
+.modal_info {
+    text-align: center;
+    padding: 2vw 0;
+    font-size: 3vw;
+}
+
+.modal_info-title {
+    padding: 1vw 0;
+}
+
+@media (max-width: 675px) {
+    .tag__selector select {
+        width: 30%;
+    }
+
+    h2 {
+        font-size: 18px;    
+    }
+
+    div {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 512px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .tag__selector select {
+        width: 40%;
+    }
+}

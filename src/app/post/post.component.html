@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="wrapper">
+    <h1 class="clearfix">Post details</h1>
+    
+    <div *ngFor="let post of data">
+      <div class="post" *ngIf="id == post.title">
+        <h2 class="post__title">{{post.title}}</h2>
+        <div class="post__info">{{post.text}}</div>
+        <div class="post__tags ">
+          <span *ngIf="post.tag['one']" [style.background-color]="post.tag['one']">{{post.tag['one']}}</span>
+          <span *ngIf="post.tag['two']" [style.background-color]="post.tag['two']">{{post.tag['two']}}</span>
+          <span *ngIf="post.tag['three']" [style.background-color]="post.tag['three']">{{post.tag['three']}}</span>
+        </div>
+        <div class="post_author" (click)="display()">Author: {{post.author['name']}}</div>
+      
+        <div class="screen" [hidden]="!clicked" (click)="hide()">
+          <div class="modal">
+            <div class="modal_info">
+              <div class="modal_info-title">
+                Name:
+              </div>
+              {{post.author['name']}}
+            </div>
+            <div class="modal_info">
+              <div class="modal_info-title">
+                Phone:
+              </div>
+              {{post.author['phone']}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

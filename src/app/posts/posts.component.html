@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="wrapper">
+    <h1 class="clearfix main__title">All posts</h1>
+    <div class="tag__selector clearfix">
+      <select id="tag_select" (change)="onTagSelect($event)">
+        <option value="" disabled>Select tag</option>
+        <option value="">All tags</option>
+        <option *ngFor="let tag of tags" value='{{tag}}'>{{tag}}</option>
+      </select>
+    </div>
+
+    <div class="post" *ngFor="let post of posts">
+      <h2 class="post__title" routerLink = "/post/{{post.title}}" routerLinkActive="true">{{post.title}}</h2>
+      <div class="post__info">{{post.description}}</div>
+      <div class="post__tags">
+        <span *ngIf="post.tag['one']" [style.background-color]="post.tag['one']">{{post.tag['one']}}</span>
+        <span *ngIf="post.tag['two']" [style.background-color]="post.tag['two']">{{post.tag['two']}}</span>
+        <span *ngIf="post.tag['three']" [style.background-color]="post.tag['three']">{{post.tag['three']}}</span>
+      </div>
+    </div>
+  </div>
+</div>
